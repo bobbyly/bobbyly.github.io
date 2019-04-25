@@ -1,0 +1,27 @@
+html{
+min-height: 100%;
+}
+body {
+    -webkit-animation: colorchange 20s infinite; 
+    animation: colorchange 20s infinite;
+	font-family: 'IBM Plex Mono', serif;
+	color: #ffffff;	
+	background-image: linear-gradient(to left, #fff1eb 0%, #ff9059 60%);
+	background-color: #ff9059;
+	font-size: 72px;
+	font-size: 4.75vw;
+}
+@-webkit-keyframes colorchange {
+    0%  {color: #59c8ff;}
+    25%  {color: #59ffe3;}
+    50% {color: #5975ff;}
+	75%  {color: #59ffe3;}
+	100%  {color: #59c8ff;}
+}
+@keyframes colorchange {
+    0%  {color: #59c8ff;}
+    25%  {color: #59ffe3;}
+    50% {color: #5975ff;}
+	75%  {color: #59ffe3;}
+	100%  {color: #59c8ff;}
+}   
