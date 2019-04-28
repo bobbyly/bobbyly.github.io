@@ -1,9 +1,9 @@
 html{
-min-height: 100%;
+	min-height: 100%;
 }
 body {
-    -webkit-animation: colorchange 20s infinite; 
-    animation: colorchange 20s infinite;
+	-webkit-animation: colorchange 20s infinite; 
+	animation: colorchange 20s infinite;
 	font-family: 'IBM Plex Mono', serif;
 	color: #ffffff;	
 	background-image: linear-gradient(-45deg, #fff1eb 0%, #ff9059 50%);
@@ -12,30 +12,36 @@ body {
 	font-size: 5.5vw;
 }
 @-webkit-keyframes colorchange {
-    0%  {color: #738aff;}
-    25%  {color: #264bff;}
-    50% {color: #5975ff;}
+	0%  {color: #738aff;}
+	25%  {color: #264bff;}
+	50% {color: #5975ff;}
 	75%  {color: #264bff;}
 	100%  {color: #738aff;}
 }
-@-webkit-keyframes colorchange {
-    0%  {color: #738aff;}
-    25%  {color: #264bff;}
-    50% {color: #5975ff;}
+@keyframes colorchange {
+	0%  {color: #738aff;}
+	25%  {color: #264bff;}
+	50% {color: #5975ff;}
 	75%  {color: #264bff;}
 	100%  {color: #738aff;}
 }   
-div {
-  padding-top: 50px;
+h1 {
+  padding-top: 30px;
   padding-right: 30px;
-  padding-bottom: 50px;
+	padding-left: 30px;
+	font-size: 60px;
+	font-size: 5vw;
+}
+div {
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
   padding-left: 30px;
 }
 p{
 	font-size: 42px;
 	font-size: 3.8vw;
 }
-
 footer{
 	position: fixed;
 	left: 0;
@@ -46,26 +52,20 @@ footer{
 	color: white;
 	font-size: 42px;
 	font-size: 4vw;
+	align-items: center;
+	display: flex;
+	justify-content: center;
 }
-
-
-div.address {
-height: 10vh;
-display: flex;
-align-items: center;
-justify-content: center }
 div.address p{
 margin: 0;
+text-align: center
 }
-
 a:link {
   text-decoration: none;
 }
-
 a:visited {
   text-decoration: none;
 }
-
 a:hover {
 	text-decoration: none;
 	-webkit-animation: hoverchange 2s infinite; 
@@ -75,13 +75,12 @@ a:active {
 	text-decoration: none;
 }
 
-
 @-webkit-keyframes hoverchange {
     0%  {color: #00dbde;}
     50% {color: #fc00ff;}
 	100%  {color: #00dbde;}
 }
-@-webkit-keyframes hoverchange {
+@keyframes hoverchange {
     0%  {color: #00dbde;}
     50% {color: #fc00ff;}
 	100%  {color: #00dbde;}

@@ -18,7 +18,7 @@ body {
 	75%  {color: #264bff;}
 	100%  {color: #738aff;}
 }
-@-webkit-keyframes colorchange {
+@keyframes colorchange {
     0%  {color: #738aff;}
     25%  {color: #264bff;}
     50% {color: #5975ff;}
@@ -81,7 +81,7 @@ a:active {
     50% {color: #fc00ff;}
 	100%  {color: #00dbde;}
 }
-@-webkit-keyframes hoverchange {
+@keyframes hoverchange {
     0%  {color: #00dbde;}
     50% {color: #fc00ff;}
 	100%  {color: #00dbde;}
