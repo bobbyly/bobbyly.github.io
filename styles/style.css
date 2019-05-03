@@ -9,6 +9,7 @@ body {
 	color: #ffffff;	
 	background-image: linear-gradient(-45deg, #fff1eb 0%, #ff9059 50%);
 	background-color: #ff9059;
+        padding-bottom: 100px;
 }
 @-webkit-keyframes colorchange {
 	0%  {color: #738aff;}
