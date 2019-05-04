@@ -1,30 +1,180 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="../styles/style.css">
+<style>
+html,
+        body {
+          height: 100%;
+          overflow: hidden;
+        }
+        
+        .Loop {
+          position: relative;
+          height: 100%;
+          overflow: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+        
+        section {
+          position: relative;
+          text-align: center;
+          min-height: 300px;
+          max-height: 700px;
+          height: 80%;
+        }
+        
+        ::scrollbar {
+          display: none;
+        }
+        
+        body {
+          font-family: "Avenir Next", Helvetica, sans-serif;
+          font-weight: normal;
+          font-size: 100%;
+        }
+        
+        .red {
+          background: #FF4136;
+        }
+        .green {
+          background: #2ECC40;
+        }
+        .blue {
+          background: #0074D9;
+        }
+        .orange {
+          background: rebeccapurple;
+        }
+        
+        h1 {
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 100%;
+          font-size: 80px;
+          letter-spacing: 5px;
+          color: #fff;
+          text-transform: uppercase;
+        }
+</style>
+<script>
+        var doc = window.document,
+          context = doc.querySelector('.jsloop'),
+          clones = context.querySelector('.isclone'),
+          disableScroll = false,
+          scrollHeight = 0,
+          scrollPos = 0,
+          clonesHeight = 0,
+          i = 0;
+        
+        function getScrollPos () {
+          return (context.pageYOffset || context.scrollTop) - (context.clientTop || 0);
+        }
+        
+        function setScrollPos (pos) {
+          context.scrollTop = pos;
+        }
+        
+        function getClonesHeight () {
+          clonesHeight = 0;
+        
+          for (i = 0; i < clones.length; i += 1) {
+            clonesHeight = clonesHeight + clones[i].offsetHeight;
+          }
+        
+          return clonesHeight;
+        }
+        
+        function reCalc () {
+          scrollPos = getScrollPos();
+          scrollHeight = context.scrollHeight;
+          clonesHeight = getClonesHeight();
+        
+          if (scrollPos <= 0) {
+            setScrollPos(1); // Scroll 1 pixel to allow upwards scrolling
+          }
+        }
+        
+        function scrollUpdate () {
+          if (!disableScroll) {
+            scrollPos = getScrollPos();
+        
+            if (clonesHeight + scrollPos >= scrollHeight) {
+              // Scroll to the top when you’ve reached the bottom
+              setScrollPos(1); // Scroll down 1 pixel to allow upwards scrolling
+              disableScroll = true;
+            } else if (scrollPos <= 0) {
+              // Scroll to the bottom when you reach the top
+              setScrollPos(scrollHeight - clonesHeight);
+              disableScroll = true;
+            }
+          }
+        
+          if (disableScroll) {
+            // Disable scroll-jumping for a short time to avoid flickering
+            window.setTimeout(function () {
+              disableScroll = false;
+            }, 40);
+          }
+        }
+        
+        function init () {
+          reCalc();
+          
+          context.addEventListener('scroll', function () {
+            window.requestAnimationFrame(scrollUpdate);
+          }, false);
+        
+          window.addEventListener('resize', function () {
+            window.requestAnimationFrame(reCalc);
+          }, false);
+        }
+        
+        if (document.readyState !== 'loading') {
+          init()
+        } else {
+          doc.addEventListener('DOMContentLoaded', init, false)
+        }
+
+// Just for this demo: Center the middle block on page load
+window.onload = function () {
+          setScrollPos(Math.round(clones[0].getBoundingClientRect().top + getScrollPos() - (context.offsetHeight - clones[0].offsetHeight) / 2));
+        };
+        </script>
 </head>
 <body>
-<div>
-Hello, I'm Bobby Ly.<br>
-
-<p>
-I'm a junior developer living and working in Melbourne.<br>
-I'm currently on the lookout for an entry-level <span id=questionable>front end</span> position.<br>
-I've spent 10 years in retail, from customer service, finance, merchandise, and logistics.<br>
-I've implemented Python, SQL, and VBA solutions into my day job.<br>
-I'm learning and getting comfortable with <b>basic</b> frontend development (hey, I made this website.)<br>
-<br>
-</p>
-</div>
+    <main class="Loop jsloop">
+            <section class="green">
+              <h1>One</h1>
+            </section>
+            <section class="red">
+              <h1>For</h1>
+            </section>
+            <section class="blue">
+              <h1>All</h1>
+            </section>
+            <section class="orange">
+              <h1>And</h1>
+            </section>
+            <section class="blue">
+              <h1>All</h1>
+            </section>
+            <section class="red">
+              <h1>For</h1>
+            </section>
+            <!--
+            These blocks are the same as the first blocks to get that looping illusion going.
+            You need to add clones to fill out a full viewport height.
+            -->
+            <section class="green isclone">
+              <h1>One</h1>
+            </section>
+            <section class="red isclone">
+              <h1>For</h1>
+            </section>
+          </main>
 </body>
 
-<footer>
-<div class=address>
-<p>
-contact me <a href="mailto:contact@hellobobbyly.com">here!</a>
-</p>
-</div>
-</footer>
 </html>
+

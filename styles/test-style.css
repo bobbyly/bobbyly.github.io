@@ -1,94 +1,55 @@
-html{
-min-height: 100%;
-}
+html,
 body {
-    -webkit-animation: colorchange 20s infinite; 
-    animation: colorchange 20s infinite;
-	font-family: 'IBM Plex Mono', serif;
-	color: #ffffff;	
-	background-image: linear-gradient(-45deg, #fff1eb 0%, #ff9059 50%);
-	background-color: #ff9059;
-	font-size: 72px;
-	font-size: 5.5vw;
-}
-@-webkit-keyframes colorchange {
-    0%  {color: #738aff;}
-    25%  {color: #264bff;}
-    50% {color: #5975ff;}
-	75%  {color: #264bff;}
-	100%  {color: #738aff;}
-}
-@keyframes colorchange {
-    0%  {color: #738aff;}
-    25%  {color: #264bff;}
-    50% {color: #5975ff;}
-	75%  {color: #264bff;}
-	100%  {color: #738aff;}
-}   
-div {
-  padding-top: 50px;
-  padding-right: 30px;
-  padding-bottom: 50px;
-  padding-left: 30px;
-}
-p{
-	font-size: 42px;
-	font-size: 3.8vw;
+  height: 100%;
+  overflow: hidden;
 }
 
-footer{
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	height: 20%;
-	background-color: #ff9059;
-	color: white;
-	font-size: 42px;
-	font-size: 4vw;
+.Loop {
+  position: relative;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
-
-div.address {
-height: 10vh;
-display: flex;
-align-items: center;
-justify-content: center }
-div.address p{
-margin: 0;
+section {
+  position: relative;
+  text-align: center;
+  min-height: 300px;
+  max-height: 700px;
+  height: 80%;
 }
 
-a:link {
-  text-decoration: none;
+::scrollbar {
+  display: none;
 }
 
-a:visited {
-  text-decoration: none;
+body {
+  font-family: "Avenir Next", Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 100%;
 }
 
-a:hover {
-	text-decoration: none;
-	-webkit-animation: hoverchange 2s infinite; 
-	animation: hoverchange 2s infinite;
+.red {
+  background: #FF4136;
 }
-a:active {
-	text-decoration: none;
+.green {
+  background: #2ECC40;
+}
+.blue {
+  background: #0074D9;
+}
+.orange {
+  background: rebeccapurple;
 }
 
-
-@-webkit-keyframes hoverchange {
-    0%  {color: #00dbde;}
-    50% {color: #fc00ff;}
-	100%  {color: #00dbde;}
-}
-@keyframes hoverchange {
-    0%  {color: #00dbde;}
-    50% {color: #fc00ff;}
-	100%  {color: #00dbde;}
-}   
-
-#questionable:hover{
-	background-color: #fff1eb;
-	color: #fff1eb;
-	background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+h1 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  font-size: 80px;
+  letter-spacing: 5px;
+  color: #fff;
+  text-transform: uppercase;
 }
