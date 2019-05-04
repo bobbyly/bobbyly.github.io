@@ -30,17 +30,18 @@ body {
 }
 
 .red {
-  background: #FF4136;
+  background: #ff9059;
 }
 .green {
-  background: #2ECC40;
+  background: lightgreen;
 }
 .blue {
-  background: #0074D9;
+  background: lightblue;
 }
-.orange {
+.purple {
   background: rebeccapurple;
 }
+.pink { background: plum}
 
 h1 {
   margin: 0;
@@ -50,6 +51,6 @@ h1 {
   width: 100%;
   font-size: 80px;
   letter-spacing: 5px;
-  color: #fff;
+  color: #000;
   text-transform: uppercase;
 }
