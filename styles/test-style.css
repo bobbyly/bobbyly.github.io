@@ -1,56 +1,57 @@
 html,
 body {
-  height: 100%;
-  overflow: hidden;
+    height: 100%;
+    overflow: hidden;
 }
 
 .Loop {
-  position: relative;
-  height: 100%;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
+    position: relative;
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 section {
-  position: relative;
-  text-align: center;
-  min-height: 300px;
-  max-height: 700px;
-  height: 80%;
+    position: relative;
+    text-align: center;
+    min-height: 300px;
+    max-height: 700px;
+    height: 80%;
 }
 
 ::scrollbar {
-  display: none;
+    display: none;
 }
 
 body {
-  font-family: "Avenir Next", Helvetica, sans-serif;
-  font-weight: normal;
-  font-size: 100%;
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 100%;
+    margin: 0px;
 }
 
 .red {
-  background: #ff9059;
+    background: #FF4136;
 }
 .green {
-  background: lightgreen;
+    background: #2ECC40;
 }
 .blue {
-  background: lightblue;
+    background: #0074D9;
 }
-.purple {
-  background: rebeccapurple;
+.orange {
+    background: rebeccapurple;
 }
-.pink { background: plum}
 
 h1 {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  font-size: 80px;
-  letter-spacing: 5px;
-  color: #000;
-  text-transform: uppercase;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 100%;
+    font-size: 80px;
+    letter-spacing: 5px;
+    color: #fff;
+    text-transform: uppercase;
 }

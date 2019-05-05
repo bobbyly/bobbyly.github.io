@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -93,7 +94,7 @@
     </body>
 
 <script id="rendered-js">
-        var doc = window.document,
+var doc = window.document,
 context = doc.querySelector('.js-loop'),
 clones = context.querySelectorAll('.is-clone'),
 disableScroll = false,
@@ -175,7 +176,7 @@ if (document.readyState !== 'loading') {
 window.onload = function () {
     setScrollPos(Math.round(clones[0].getBoundingClientRect().top + getScrollPos() - (context.offsetHeight - clones[0].offsetHeight) / 2));
 };
-        //# sourceURL=pen.js
+
 </script>
 
 </html>
