@@ -54,7 +54,7 @@ function scrollUpdate() {
     // Disable scroll-jumping for a short time to avoid flickering
     window.setTimeout(function () {
         disableScroll = false;
-    }, 600);
+    }, 20);
     }
 }
 

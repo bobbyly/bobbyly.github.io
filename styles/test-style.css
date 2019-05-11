@@ -49,13 +49,13 @@ div.receipts{
 }
 div.receipts p{
     text-align: center;
-    padding: 6vw;
+    padding: 3%;
     margin: 0px;
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
-    font-size: 30px;
+    font-size: 29px;
     color: #fff1eb;
 }
 #questionable:hover{
