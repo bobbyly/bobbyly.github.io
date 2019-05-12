@@ -6,14 +6,26 @@ scrollHeight = 0,
 scrollPos = 0,
 clonesHeight = 0,
 i = 0;
+isScrollBehaviourSupported = 'scrollBehavior' in doc.documentElement.style;
+
+if(!isScrollBehaviourSupported) {
+    // if scrollBehaviour is not supported, then don't show the clones and don't execute scroll loop   
+    clones.forEach(function(element){
+        element.style.display = "none";
+    });
+}
 
 function getScrollPos() {
     return (context.pageYOffset || context.scrollTop) - (context.clientTop || 0);
 }
 
 function setScrollPos(pos) {
+    if(isScrollBehaviourSupported) {
+    // if scrollBehaviour is not supported, then don't show the clones and don't execute js    
+
     // context.scrollTop = pos;
     context.scroll({top: pos, left: 0, behavior: 'auto'});
+}
 }
 
 function getClonesHeight() {
@@ -35,6 +47,7 @@ function reCalc() {
     setScrollPos(1); // Scroll 1 pixel to allow upwards scrolling
     }
 }
+
 
 function scrollUpdate() {
     if (!disableScroll) {
