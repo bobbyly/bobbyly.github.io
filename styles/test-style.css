@@ -33,13 +33,16 @@ body {
     background: #a01c48;
 }
 .green {
-    background: #3cba92;
+    background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
 }
 .blue {
     background: #041251;
 }
 .purple {
     background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+}
+.orange {
+    background: #ff9059;
 }
 
 div.receipts{
@@ -58,6 +61,7 @@ div.receipts p{
     font-size: 29px;
     color: #fff1eb;
 }
+
 #questionable:hover{
 	background-color: #fff1eb;
 	color: #fff1eb;

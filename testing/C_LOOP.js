@@ -8,11 +8,13 @@ clonesHeight = 0,
 i = 0;
 isScrollBehaviourSupported = 'scrollBehavior' in doc.documentElement.style;
 
+
 if(!isScrollBehaviourSupported) {
     // if scrollBehaviour is not supported, then don't show the clones
     clones.forEach(function(element){
         element.style.display = "none";
     });
+    document.getElementById('last-tile').style.paddingBottom = "15%"
 }
 
 function getScrollPos() {
@@ -22,7 +24,6 @@ function getScrollPos() {
 function setScrollPos(pos) {
     if(isScrollBehaviourSupported) {
     // if scrollBehaviour is not supported, then don't execute scroll loop  
-    // context.scrollTop = pos;
     context.scroll({top: pos, left: 0, behavior: 'auto'});
 }
 }
