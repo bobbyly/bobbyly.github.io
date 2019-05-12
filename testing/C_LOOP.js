@@ -53,18 +53,18 @@ function scrollUpdate() {
     if (!disableScroll) {
     scrollPos = getScrollPos();
 
-    if (clonesHeight + scrollPos >= scrollHeight) {
+    if (isScrollBehaviourSupported && clonesHeight + scrollPos >= scrollHeight) {
         // Scroll to the top when you’ve reached the bottom
         setScrollPos(1); // Scroll down 1 pixel to allow upwards scrolling
         disableScroll = true;
-    } else if (scrollPos <= 0) {
+    } else if (isScrollBehaviourSupported && scrollPos <= 0) {
         // Scroll to the bottom when you reach the top
         setScrollPos(scrollHeight - clonesHeight);
         disableScroll = true;
     }
     }
 
-    if (disableScroll) {
+    if (isScrollBehaviourSupported && disableScroll) {
     // Disable scroll-jumping for a short time to avoid flickering
     window.setTimeout(function () {
         disableScroll = false;
