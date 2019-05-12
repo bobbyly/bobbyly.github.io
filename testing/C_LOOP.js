@@ -11,8 +11,9 @@ function getScrollPos() {
     return (context.pageYOffset || context.scrollTop) - (context.clientTop || 0);
 }
 
-function setScrollPos(pos) {
-    context.scrollTop = pos;
+function (pos) {
+    // context.scrollTop = pos;
+    context.scroll({top: pos, left: 0, behavior: 'auto'});
 }
 
 function getClonesHeight() {
@@ -54,7 +55,7 @@ function scrollUpdate() {
     // Disable scroll-jumping for a short time to avoid flickering
     window.setTimeout(function () {
         disableScroll = false;
-    }, 1000);
+    }, 100);
     }
 }
 
@@ -76,7 +77,7 @@ if (document.readyState !== 'loading') {
     doc.addEventListener('DOMContentLoaded', init, false);
 }
 
-// // Just for this demo: Center the middle block on page load
-// window.onload = function () {
-//     setScrollPos(Math.round(clones[0].getBoundingClientRect().top + getScrollPos() - (context.offsetHeight - clones[0].offsetHeight) / 2));
-// };
+// Just for this demo: Center the middle block on page load
+window.onload = function () {
+    setScrollPos(Math.round(clones[0].getBoundingClientRect().top + getScrollPos() - (context.offsetHeight - clones[0].offsetHeight) / 4));
+};
