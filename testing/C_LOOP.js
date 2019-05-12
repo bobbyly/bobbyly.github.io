@@ -9,7 +9,7 @@ i = 0;
 isScrollBehaviourSupported = 'scrollBehavior' in doc.documentElement.style;
 
 if(!isScrollBehaviourSupported) {
-    // if scrollBehaviour is not supported, then don't show the clones and don't execute scroll loop   
+    // if scrollBehaviour is not supported, then don't show the clones
     clones.forEach(function(element){
         element.style.display = "none";
     });
@@ -21,8 +21,7 @@ function getScrollPos() {
 
 function setScrollPos(pos) {
     if(isScrollBehaviourSupported) {
-    // if scrollBehaviour is not supported, then don't show the clones and don't execute js    
-
+    // if scrollBehaviour is not supported, then don't execute scroll loop  
     // context.scrollTop = pos;
     context.scroll({top: pos, left: 0, behavior: 'auto'});
 }
@@ -53,7 +52,7 @@ function scrollUpdate() {
     if (!disableScroll) {
     scrollPos = getScrollPos();
 
-    if (isScrollBehaviourSupported && clonesHeight + scrollPos >= scrollHeight) {
+    if (isScrollBehaviourSupported && (clonesHeight + scrollPos) >= scrollHeight) {
         // Scroll to the top when you’ve reached the bottom
         setScrollPos(1); // Scroll down 1 pixel to allow upwards scrolling
         disableScroll = true;
