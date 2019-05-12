@@ -11,7 +11,7 @@ function getScrollPos() {
     return (context.pageYOffset || context.scrollTop) - (context.clientTop || 0);
 }
 
-function (pos) {
+function setScrollPos(pos) {
     // context.scrollTop = pos;
     context.scroll({top: pos, left: 0, behavior: 'auto'});
 }
