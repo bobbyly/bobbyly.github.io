@@ -5,8 +5,7 @@ body{
   font-family: 'IBM Plex Mono', serif;
   color: #ffffff;	
   height: 100%;
-  overflow: hidden;
-  font-size: 100%;
+  width: 100%;
 }
 .eyes{
   position: absolute;
