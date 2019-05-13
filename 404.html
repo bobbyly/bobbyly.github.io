@@ -1,32 +1,63 @@
 ---
 permalink: /404.html
 ---
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head>
-<title>Hello Bobby Ly</title>
-<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="../styles/style.css">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-</head>
-<body>
-<h1>
-Hello, I'm Bobby Ly.
-</h1>
-<h2 id=questionable>This is a 404 page &#128269;</h2>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello Bobby Ly</title>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="404style.css"> 
+  </head>
 
-<footer>
-    <div class="address">
-        <p>
-        <a href="https://www.linkedin.com/in/bobby-ly-8ba83593/">Where I've been &#128199;</a>
-        <br>
-        <a href="https://github.com/bobbyly">My development journey &#x1F4BE;</a>
-        <br>
-        <a href="mailto:contact@hellobobbyly.com">Contact me &#128231;</a>
-        </p>
+  <body>
+
+    <div class="headers">
+      
+    <h1>
+      Hello, I'm Bobby Ly.
+      </h1>
+      <a href="https://hellobobbyly.com">
+      <h2 id=questionable>This is a 404 page &#128269;</h2>
+      <h2>Head back to homepage &#127968;</h2>
+      </a>
     </div>
-</footer>
+
+  <div class="eyes">
+    <div class="eye">
+      <div class="ball"></div>
+    </div>
+
+    <div class="eye">
+      <div class="ball"></div>
+    </div>
+  </div>
+
+  <div class="schnoz">
+      <h1>&#128067</h1>
+  </div>
+
+<script>
+  var balls = document.getElementsByClassName("ball");
+  document.onmousemove = function(){
+    var x = event.clientX * 100 / window.innerWidth + "%";
+    var y = event.clientY * 100 / window.innerHeight + "%";
+    //event.clientX => get the horizontal coordinate of the mouse
+    //event.clientY => get the Vertical coordinate of the mouse
+    //window.innerWidth => get the browser width
+    //window.innerHeight => get the browser height
+
+    for(var i=0;i<2;i++){
+      balls[i].style.left = x;
+      balls[i].style.top = y;
+      balls[i].style.transform = "translate(-"+x+",-"+y+")";
+    }
+  }
+</script>
+
+  </body>
 </html>
