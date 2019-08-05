@@ -1,50 +1,73 @@
-html{
-	min-height: 100%;
-	min-width: 100%;
-}
+html,
 body {
-	-webkit-animation: colorchange 20s infinite; 
-	animation: colorchange 20s infinite;
-	font-family: 'IBM Plex Mono', serif;
-	color: #ffffff;	
-	background-image: linear-gradient(-45deg, #fff1eb 0%, #ff9059 50%);
-	background-color: #ff9059;
-        padding-bottom: 200px;
+    height: 100%;
+    overflow: hidden;
 }
-@-webkit-keyframes colorchange {
-	0%  {color: #738aff;}
-	25%  {color: #264bff;}
-	50% {color: #5975ff;}
-	75%  {color: #264bff;}
-	100%  {color: #738aff;}
+
+.Loop {
+    position: relative;
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
-@keyframes colorchange {
-	0%  {color: #738aff;}
-	25%  {color: #264bff;}
-	50% {color: #5975ff;}
-	75%  {color: #264bff;}
-	100%  {color: #738aff;}
-}   
-h1 {
-  padding-right: 30px;
-	padding-left: 30px;
-	font-size: 50px;
+
+section {
+    position: relative;
+    text-align: center;
+    min-height: 300px;
+    max-height: 700px;
+    height: 80%;
 }
-h2 {
-  padding-right: 30px;
-	padding-left: 30px;
-	font-size: 40px;
+
+::scrollbar {
+    display: none;
 }
-div {
-  padding-right: 20px;
-  padding-bottom: 20px;
-  padding-left: 30px;
+
+body {
+    font-family: 'IBM Plex Mono', serif;
+    font-size: 100%;
+    margin: 0px;
 }
-p{
-	font-size: 36px;
+
+.red {
+    background: #a01c48;
+}
+.green {
+    background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+}
+.blue {
+    background: #041251;
+}
+.purple {
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+}
+.orange {
+    background: #ff9059;
+}
+
+div.receipts{
+    width: 100%;
+	display: flex;
+	justify-content: center;
+}
+div.receipts p{
+    text-align: center;
+    padding: 3%;
+    margin: 0px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    font-size: 29px;
+    color: #fff1eb;
+}
+
+#questionable:hover{
+	background-color: #fff1eb;
+	color: #fff1eb;
+	background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
 }
 footer{
-	padding-top: 20px;
 	position: fixed;
 	left: 0;
 	bottom: 0;
@@ -53,7 +76,7 @@ footer{
 	align-items: center;
 	display: flex;
 	justify-content: center;
-	min-height: 15vh;
+	min-height: 15%;
 }
 div.address p{
 margin: 5px;
@@ -84,9 +107,3 @@ a:active {
     50% {color: #fc00ff;}
 	100%  {color: #00dbde;}
 }   
-
-#questionable:hover{
-	background-color: #fff1eb;
-	color: #fff1eb;
-	background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
-}

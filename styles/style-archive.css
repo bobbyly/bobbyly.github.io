@@ -1,0 +1,92 @@
+html{
+	min-height: 100%;
+	min-width: 100%;
+}
+body {
+	-webkit-animation: colorchange 20s infinite; 
+	animation: colorchange 20s infinite;
+	font-family: 'IBM Plex Mono', serif;
+	color: #ffffff;	
+	background-image: linear-gradient(-45deg, #fff1eb 0%, #ff9059 50%);
+	background-color: #ff9059;
+        padding-bottom: 200px;
+}
+@-webkit-keyframes colorchange {
+	0%  {color: #738aff;}
+	25%  {color: #264bff;}
+	50% {color: #5975ff;}
+	75%  {color: #264bff;}
+	100%  {color: #738aff;}
+}
+@keyframes colorchange {
+	0%  {color: #738aff;}
+	25%  {color: #264bff;}
+	50% {color: #5975ff;}
+	75%  {color: #264bff;}
+	100%  {color: #738aff;}
+}   
+h1 {
+  padding-right: 30px;
+	padding-left: 30px;
+	font-size: 50px;
+}
+h2 {
+  padding-right: 30px;
+	padding-left: 30px;
+	font-size: 40px;
+}
+div {
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+}
+p{
+	font-size: 36px;
+}
+footer{
+	padding-top: 20px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #ff9059;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	min-height: 15vh;
+}
+div.address p{
+margin: 5px;
+text-align: center;
+}
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+	-webkit-animation: hoverchange 2s infinite; 
+	animation: hoverchange 2s infinite;
+}
+a:active {
+	text-decoration: none;
+}
+
+@-webkit-keyframes hoverchange {
+	0%  {color: #00dbde;}
+	50% {color: #fc00ff;}
+	100%  {color: #00dbde;}
+}
+@keyframes hoverchange {
+    0%  {color: #00dbde;}
+    50% {color: #fc00ff;}
+	100%  {color: #00dbde;}
+}   
+
+#questionable:hover{
+	background-color: #fff1eb;
+	color: #fff1eb;
+	background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+}
