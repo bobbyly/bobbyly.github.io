@@ -1,0 +1,125 @@
+<html lang="en">
+<head>    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" type="text/css" href="styles/style.css"> -->
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans" rel="stylesheet">
+  <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+  <title>Hello!</title>
+</head>
+
+<script>
+var starfield = "";
+var star = 	"ˇ,˳,¨,˙ , ·., . ·,· ,⊹, ˚".split(",");
+var whitespace = "   ,    ,   ,  , ,  , ,  ,     ".split(",");
+var supernova = "  ✧  ,  ✵  ,  ✷  ,  ✧  ,  ✫  ,  *  ,  ✦  ,  ✵  ,  ✷  ".split(",");
+var wordCount = 4;
+var supernovaCount = 0
+var starCount = 0
+
+for(var i=0; i<wordCount; i++) {
+  var rand = null;
+  var disperse = null;
+  for (var x=0; x<8; x++) {
+    rand = Math.floor(Math.random() * star.length);
+    disperse = Math.floor(Math.random() * 10);
+
+    starfield += whitespace[rand];
+    
+    if (supernovaCount < 3 && disperse > 8) {
+      starfield += supernova[rand];
+      supernovaCount += 1;}
+    
+    if (starCount < 20 && disperse > 4) {
+      starfield += star[rand];
+      starCount += 1;}
+
+  }
+  if (i<wordCount-1)
+  starfield += "<br>";
+  else
+  starfield += " ";
+}
+console.info(starfield);
+
+window.onload = function(){
+    document.getElementById('stars').innerHTML = "<p aria-hidden=true aria-describedby=description>" + starfield + "</p>"; };
+
+</script>
+
+<style>
+  
+body {	
+    font-family: 'IBM Plex Sans', san-serif;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    margin-left: 80px;
+    margin-right: 80px;
+    background-color: #FFF9DB;
+    color: #000;
+    font-size: 16px;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+  }
+
+  #copy{
+    margin-bottom: 40px;
+  }
+
+  #stars {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-right: 80px;
+    /* padding-left: 40px; */
+    color: #FFF9DB;
+    background-image: linear-gradient(to right, #6a11cb 0%, #1950B2 50%);
+    background-size: 600px 600px;
+    background-repeat: repeat-y;
+    font-family: san-serif;
+    font-size: 100%;
+    white-space: pre;
+    height: auto;
+    max-width: 300px;
+    padding: 75px 0;
+    display: flex;
+  justify-content: center;
+  }
+
+  #description {
+  display: none;
+}
+</style>
+
+<body>
+
+<div id="copy">
+<h1>Hello, I'm Bobby Ly.</h1>
+
+<p>
+  I'm a data analyst living and working in Melbourne.<br>
+  I work on tools and reports that empower product teams.<br>
+  Previously I've spent 10 years as an analyst in the retail industry, across finance, merchandise, and logistics.<br>
+  Currently I'm working with product teams in fintech.<br>
+  Laterally to my work, I'm exploring and learning about the space between data, accessibility, and assistive tech.
+</p>
+</div>
+  
+<div id="description">
+  Please enjoy a randomly generated field of stars
+</div>
+<div id="stars" onclick="window.location='https://hellobobbyly.com/';" style="cursor:pointer;">
+</div>
+
+<div class="address">
+  <p>
+  <a href="https://www.linkedin.com/in/bobby-ly-8ba83593/">Where I've been &#128199;</a>
+  <br>
+  <a href="mailto:contact@hellobobbyly.com">Contact me &#128231;</a>
+  </p>
+</div>
+
+</body>
+
